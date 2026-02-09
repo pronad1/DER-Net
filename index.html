@@ -340,127 +340,63 @@
 
       <div class="content has-text-centered mb-5">
         <p>
-          Comprehensive analysis of the proposed 3UResNet model demonstrating superior accuracy and clinical relevance.
+          Comprehensive visual analysis demonstrating DERNet's detection accuracy and classification interpretability
+          across diverse spinal pathologies.
         </p>
       </div>
 
-      <div id="results-carousel" class="carousel results-carousel">
-
-        <!-- (a) -->
-        <div class="carousel-item is-active">
-          <div class="box" style="height:500px; display:flex; flex-direction:column; justify-content:space-between;">
-
-            <div class="has-text-centered" style="height:220px;">
-              <img src="./static/images/Figure-3.drawio (7).drawio.png" alt="Figure 3" style="max-height:100%;" />
-            </div>
-
-            <div>
-              <h4 class="has-text-weight-bold mb-2">
-                (a) Qualitative Segmentation
-              </h4>
-
-              <p class="mb-3">
-                Comparison of the ground truth mask and predicted mask along with error analysis for the 3UResNet model.
-              </p>
-
-              <div class="notification is-light is-info">
-                <em>
-                  <strong>Why it's better:</strong>
-                  Our ensemble approach preserves local anatomical details often missed by Transformers.
-                </em>
-              </div>
-            </div>
-
+      <!-- Detection Results -->
+      <div class="box" style="border-top: 5px solid #4caf50; margin-bottom: 30px;">
+        <div style="text-align: center;">
+          <img src="./static/images/detection_results_grid.png" alt="Detection Results Grid"
+            style="max-width: 100%; height: auto; border-radius: 5px;">
+        </div>
+        <div class="content has-text-centered" style="margin-top: 20px;">
+          <h4 class="title is-5">(a) Qualitative Detection Performance</h4>
+          <p style="margin-top: 10px;">
+            <strong>YOLO11-l lesion localization</strong> across multiple spinal pathologies. The visualization
+            demonstrates
+            precise bounding box predictions for 7 pathology types including Osteophytes, Vertebral Collapse, and
+            Spondylolisthesis.
+            Achieved <strong>mAP@0.5 of 41.2±0.3%</strong> with <strong>49.8% precision</strong> and <strong>40.5%
+              recall</strong>,
+            effectively handling severe class imbalance (46.9:1 ratio).
+          </p>
+          <div class="notification is-light is-success" style="margin-top: 15px;">
+            <em>
+              <strong>Why it matters:</strong> Real-time detection at <strong>~45 FPS (22ms/image)</strong> enables
+              automated triage and precise lesion localization to assist radiologists in prioritizing abnormal cases
+              for urgent review.
+            </em>
           </div>
         </div>
-
-        <!-- (b) -->
-        <div class="carousel-item">
-          <div class="box" style="height:500px; display:flex; flex-direction:column; justify-content:space-between;">
-
-            <div class="has-text-centered" style="height:220px;">
-              <img src="./static/images/Figure-4.png" alt="Figure 4" style="max-height:100%;" />
-            </div>
-
-            <div>
-              <h4 class="has-text-weight-bold mb-2">
-                (b) Quantitative Comparison
-              </h4>
-
-              <p class="mb-3">
-                Qualitative comparison of liver tumor segmentation across multiple models showing prediction variations.
-              </p>
-
-              <div class="notification is-light is-info">
-                <em>
-                  <strong>Why it matters:</strong>
-                  Highlights architectural differences in disease-region confidence.
-                </em>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- (c) -->
-        <div class="carousel-item">
-          <div class="box" style="height:500px; display:flex; flex-direction:column; justify-content:space-between;">
-
-            <div class="has-text-centered" style="height:220px;">
-              <img src="./static/images/Figure-7.drawio.drawio (1).png" alt="Figure 7" style="max-height:100%;" />
-            </div>
-
-            <div>
-              <h4 class="has-text-weight-bold mb-2">
-                (c) LIME Explainability
-              </h4>
-
-              <p class="mb-3">
-                LIME explainability identifies important regions for mild, moderate, and severe cirrhosis
-                classification.
-              </p>
-
-              <div class="notification is-light is-info">
-                <em>
-                  <strong>Why it matters:</strong>
-                  Confirms the model focuses on clinically meaningful structures.
-                </em>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- (d) -->
-        <div class="carousel-item">
-          <div class="box" style="height:500px; display:flex; flex-direction:column; justify-content:space-between;">
-
-            <div class="has-text-centered" style="height:220px;">
-              <img src="./static/images/Figure-8.drawio (2).drawio (1) (1).png" alt="Figure 8"
-                style="max-height:100%;" />
-            </div>
-
-            <div>
-              <h4 class="has-text-weight-bold mb-2">
-                (d) Grad-CAM Analysis
-              </h4>
-
-              <p class="mb-3">
-                Grad-CAM visualizations indicating regions critical for cirrhosis stage prediction.
-              </p>
-
-              <div class="notification is-light is-info">
-                <em>
-                  <strong>Why it's better:</strong>
-                  Provides transparent, clinically interpretable validation.
-                </em>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
+
+      <!-- Grad-CAM Analysis -->
+      <div class="box" style="border-top: 5px solid #ff9800;">
+        <div style="text-align: center;">
+          <img src="./static/images/gradcam.png" alt="Grad-CAM Attention Visualization"
+            style="max-width: 100%; height: auto; border-radius: 5px;">
+        </div>
+        <div class="content has-text-centered" style="margin-top: 20px;">
+          <h4 class="title is-5">(b) Grad-CAM Explainability Analysis</h4>
+          <p style="margin-top: 10px;">
+            <strong>Gradient-weighted Class Activation Mapping (Grad-CAM)</strong> visualizations revealing regions of
+            interest for DERNet ensemble classification. The heatmaps (middle column) highlight anatomical structures
+            influencing abnormality detection, while superimposed images (right column) demonstrate model attention
+            alignment with clinically relevant spinal regions. Each row represents a different pathology case with
+            varying severity levels.
+          </p>
+          <div class="notification is-light is-warning" style="margin-top: 15px;">
+            <em>
+              <strong>Why it's better:</strong> Transparent, clinically interpretable validation confirms the ensemble
+              focuses on genuine pathological features rather than artifacts, building radiologist trust in AI-assisted
+              diagnosis with <strong>AUROC 90.67±0.31%</strong> classification performance.
+            </em>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
