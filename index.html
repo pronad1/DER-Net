@@ -127,7 +127,7 @@
               </span>-->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/setu1999/Liver-Chirhosis"
+                  <a href="https://github.com/pronad1/Spinal_Lesion"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -251,32 +251,20 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Liver cirrhosis demands accurate, interpretable MRI analysis to support timely diagnosis and staging, yet
-              existing methods often
-              decouple segmentation from classification and lack the explainability required for clinical use. This work
-              introduces 3UResNet,
-              an ensemble of U-Net, TransUNet++, and Attention U-Net with ResNet50 as encoder, designed for robust
-              multiclass cirrhosis segmentation
-              on 2D T2-weighted MRI from the CirrMRI600+ dataset. A total of 5,364 training, 674 validation, and 664
-              test samples across mild, moderate,
-              and severe classes were preprocessed with augmentation, normalization, and mask binarization.
-              This research also designed three Vision Transformer–based models, namely SwinUnet, CCTUnet, and EaNetUnet
-              for segmentation.
-              On the test set, 3UResNet achieved a Dice score of 0.9516 and a mean Intersection over Union of 0.9077
-              across all classes, outperforming the transformer
-
-              baselines. After accurate segmentation, this study used the segmented masks to extract shape features and
-              applied convolutional neural networks (CNN) to extract
-
-              visual features for classification. DenseNet121 performed best for mild cirrhosis (95%), while CoAnNet
-              achieved higher accuracy for moderate (80%) and severe
-              cirrhosis (94%). Here, a WeightedRandom sampler and focal loss were employed to mitigate class imbalance
-              during training, ensuring results reflect real-world
-              clinical distributions. Model interpretability is strengthened with LIME and Grad-CAM, highlighting
-              clinically meaningful liver regions and aligning attention
-              with cirrhotic anatomy across severity levels. This study demonstrates a practical end-to-end framework
-              uniting high-fidelity segmentation with severity staging
-              and transparent rationale, paving the way for clinical adoption.
+              Automated analysis of spinal radiographs is critical to early
+              diagnosis but is currently limited by severe class imbalance and the visual subtlety of lesions. This work
+              introduces DERNet—an ensemble of
+              DenseNet121, EfficientNetV2-S, and ResNet50—for highly sensitive clas-
+              sification, coupled with a YOLO11-L model for precise lesion detection.
+              Our proposed method utilizes architectural diversity to overcome the
+              sensitivity-specificity trade-off, along with a CSP-Darknet backbone to
+              effectively capture the fine features of minute pathologies. The proposed
+              framework is validated on the VinDr-SpineXR benchmark, yielding state-
+              of-the-art AUROC of 91.03% and detection mAP@0.5 on 40.10%. In
+              addition to the technical contributions, the authors address the transla-
+              tional challenge with the development of a functional web-based interface
+              that can process various image formats, thereby facilitating the practical
+              application of the proposed framework.
             </p>
           </div>
         </div>
